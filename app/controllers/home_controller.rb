@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
 
     def index
-        render :index
+        # render :index
     end
 
     def about
-        render :about
+        # render :about
     end
 end

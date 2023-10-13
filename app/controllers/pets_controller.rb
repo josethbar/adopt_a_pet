@@ -1,13 +1,20 @@
 class PetsController < ApplicationController
-
+before_action :load_pets , only: [:index, :show_pets]
 
     def index
-        @pet = Pet.where(owner_id: params[:owner_id])
-        render json: @pet
+
+render json: {owner: @owner, pets: @pets}
     end
 
-    def show
-        @pet = Pet.find(params[:id])
-        render json: @pet
+    def show_pets
+
+render json: {owner: @owner, pets:@owner.pets}
+    end
+
+    private
+
+    def load_pets
+    @pets = Pet.find_by(owner_id: params[:owner_id])
+    @owner = Owner.find(params[:owner_id])
     end
 end

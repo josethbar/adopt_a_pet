@@ -1,0 +1,16 @@
+<%= form_with model: animal do |form| %>
+
+<p>age:</p>
+<%= form.text_field :age %>
+
+<p>color:</p>
+<%= form.text_field :color %>
+
+<p>weight:</p>
+<%= form.text_field :weight %>
+
+<p>specie:</p>
+<%= form.text_field :species %>
+
+<%= form.submit "create dog" %>
+<% end %>

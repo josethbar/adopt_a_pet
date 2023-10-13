@@ -1,13 +1,12 @@
 class OwnersController < ApplicationController
     
     def index
-        @owner = Owner.all
-        render json: @owner
+        @owners = Owner.all
+        render :index
     end
 
     def show
-        @owner = Owner.find(params[:id])
-        render json: @owner
+        @owner = Owner.includes(:pets).find(params[:id])
+        render :show
     end
-
 end
