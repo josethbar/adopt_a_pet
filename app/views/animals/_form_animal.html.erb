@@ -26,10 +26,9 @@
 
 <div>
 <%= form.submit "create" %>
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
+<% flash.each do |key, message| %>
+  <div class="flash <%= key %>">
+    <%= message %>
+    <% end %>
 </div>
 <% end %>

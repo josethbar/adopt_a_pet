@@ -16,6 +16,7 @@ class AnimalsController < ApplicationController
 
             if @animals.save
                 redirect_to @animals
+                flash[:notice] = "animal agregado con éxito."
 
             else
                 render :new, status: :unprocessable_entity
