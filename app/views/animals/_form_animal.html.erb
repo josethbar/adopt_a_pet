@@ -1,16 +1,35 @@
-<%= form_with model: animal do |form| %>
+<%= form_with model: @animals do |form| %>
 
-<p>age:</p>
-<%= form.text_field :age %>
+<div>
+<%= form.label :age %>
+<%= form.number_field :age %>
+</div>
+<br/>
 
-<p>color:</p>
-<%= form.text_field :color %>
+<div>
+<%= form.label :color %>
+<%= form.color_field :color %>
+</div>
+<br/>
 
-<p>weight:</p>
-<%= form.text_field :weight %>
+<div>
+<%= form.label :weight %>
+<%= form.number_field  :weight %>
+</div>
+<br/>
 
-<p>specie:</p>
+<div>
+<%= form.label :species %>
 <%= form.text_field :species %>
+</div>
+<br/>
 
-<%= form.submit "create dog" %>
+<div>
+<%= form.submit "create" %>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+</div>
 <% end %>

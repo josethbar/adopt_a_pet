@@ -9,13 +9,14 @@ class AnimalsController < ApplicationController
 
     def new 
         @animals = Animal.new
-
+        
         
         def create
             @animals = Animal.new(animal_params)
 
             if @animals.save
                 redirect_to @animals
+
             else
                 render :new, status: :unprocessable_entity
                 end
